@@ -1,0 +1,187 @@
+@font-face {
+  font-family: 'Calibri Bold';
+  src: url("../fonts/Calibri Bold.ttf")
+}
+
+@font-face {
+  font-family: 'Calibri';
+  src: url("../fonts/Calibri Regular.ttf")
+}
+
+@font-face {
+  font-family: 'nirmalas';
+  src: url("../fonts/nirmalas.ttf")
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400&display=swap');
+
+@import "media";
+
+body {
+  font-family: 'Tahoma', sans-serif;
+  padding-top: 15px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Montserrat, sans-serif;
+  margin-top: 1.5rem;
+}
+
+.general-title {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  width: 340px;
+  margin: 0 0 0 -170px;
+  text-align: center;
+
+  .part-1,
+  .part-2 {
+    width: 160px;
+    display: inline-block;
+  }
+
+  .part-1 {
+    text-align: right;
+    ;
+  }
+
+  .part-2 {
+    text-align: left;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+    body {
+      padding-top: 30px;
+    }
+    .general-title {
+       top: 5px;
+    }
+}
+
+.smart-form {
+  overflow: visible;
+}
+
+.survey {
+  h2 {
+    font-size: 1.2em;
+    text-align: left;
+  }
+}
+
+.logo {
+  margin: 0;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    max-height: 100px;
+  }
+}
+
+.radio {
+  text-align: center;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px #999 solid;
+  background-color: #efefef;
+  margin-bottom: 15px;
+
+  label {
+    font-size: 1.2em;
+    display: block;
+  }
+}
+
+#content {
+  padding: 30px;
+  position: relative;
+  border-left: solid 1px #eee;
+  border-right: solid 1px #eee;
+  border-bottom: 5px solid whitesmoke;
+  background: #F1F1F1;
+  box-sizing: border-box;
+  margin-top: 15px;
+}
+
+footer {
+  border: 0 none;
+}
+
+.smart-generic-form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding-bottom: 75px;
+  background-image: url('../img/humind_bottom.png');
+  background-position: bottom center;
+  background-repeat: no-repeat;
+
+  h2 {
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    display: inline-block;
+    font-family: Inconsolata, sans-serif;
+    font-weight: 400;
+  }
+
+  .form-control,
+  .ss-main,
+  .radio {
+    background-color: #ffffff;
+    border: 0;
+    outline: 0;
+    padding: 10px;
+    @include border-radius(8px);
+    display: block;
+    width: 100%;
+    margin-top: 0.25em;
+    margin-bottom: 0.5em;
+    font-family: 'Merriweather', sans-serif;
+    @include box-shadow(0 1px 1px rgba(black, 0.1));
+    resize: none;
+    font-size: 0.9em;
+
+    &:focus {
+      @include box-shadow(0 0px 2px rgba($red, 1) !important);
+    }
+  }
+
+  .action {
+    display: flex;
+    justify-content: center;
+
+    .btn {
+      width: 50%;
+    }
+  }
+
+  .ss-main {
+    padding-top: 7px;
+    height: 45px;
+  }
+}
+
+.smart-generic-form.large {
+  max-width: 800px;
+}
+
+.smart-generic-form.small {
+  max-width: 400px;
+}
+
+.smart-generic-form.full {
+  max-width: none;
+}
