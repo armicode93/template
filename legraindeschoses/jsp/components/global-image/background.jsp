@@ -1,0 +1,1 @@
+<div class="background_wrap" style="background-image: url('${previewURL}');"></div>

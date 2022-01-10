@@ -1,0 +1,12 @@
+<c:if test="${!previousSame}"><div class="row"></c:if>
+<div class="col-md-6 col-sm-6 col-xs-12 price-catagory">
+	<div #PREVIEW-EDIT#>
+	    <div class="price-box">
+	        <p class="pricing-catagory-name">${field.h1.title.value}</p>
+	        <p><span class="price">&euro;${field.number.price.value}</span>/${field.text.peroid.value}</p>
+	        ${field.wysiwyg-text.description.displayValue}
+	        <a href="${field.internal-link.link.link}" class="btn">${field.internal-link.link.linkLabel}</a>
+	    </div>
+	</div>
+</div>
+<c:if test="${!nextSame}"></div></c:if>

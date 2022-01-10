@@ -1,0 +1,13 @@
+<c:if test="${!previousSame}"><div class="row"></c:if>
+<div class="services col-md-4 col-xs-12">
+	<div #PREVIEW-EDIT#>
+	    <div class="facts">
+	        <div class="facts-overlay">
+	            <i class="fa fa-${field.text.font.value} fa-3x"></i>
+	            <p class="count">${field.number.count.value}</p>
+	            <p class="text-capitalize">${field.wysiwyg-text.label.value}</p>
+	        </div>
+	    </div>
+	</div>
+</div>
+<c:if test="${!nextSame}"></div></c:if>

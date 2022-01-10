@@ -1,0 +1,18 @@
+<c:if test="${!previousSame}"><div class="row"></c:if>
+<div class="col-md-4  col-xs-12">
+<div #PREVIEW-EDIT#>
+<div class="faq-desc-item">
+    <div class="flip-container text-center" ontouchstart="this.classList.toggle('hover');">
+        <div class="front flipper">
+            <i class="fa fa-${field.text.font.value}"></i>
+            <h5>${field.text.title.value}</h5>
+        </div><!-- front flipper -->
+        <div class="back flipper">
+            <h5>${field.text.title.value}</h5>
+            <p>${field.wysiwyg-text.description.displayValue}</p>
+        </div><!-- /.back flipper -->
+    </div><!-- /.flip-container -->
+</div>
+</div>
+</div>
+<c:if test="${!nextSame}"></div></c:if>
