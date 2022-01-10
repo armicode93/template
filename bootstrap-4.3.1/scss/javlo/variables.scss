@@ -1,0 +1,31 @@
+@import "../functions";
+@import '../variables';
+
+$padding-base-horizontal-sm: 5px;
+$padding-base-vertical-sm: 5px;
+$padding-base-horizontal: 15px;
+$padding-base-vertical: 15px;
+$padding-large-horizontal: 30px;
+$padding-large-vertical: 30px;
+
+$screen-sm: map-get($grid-breakpoints,sm);
+$screen-md: map-get($grid-breakpoints,md);
+$screen-lg: map-get($grid-breakpoints,lg);
+$screen-xl: map-get($grid-breakpoints,xl);
+$screen-sm-min: map-get($container-max-widths,sm);
+$screen-md-min: map-get($container-max-widths,md);
+$screen-lg-min: map-get($container-max-widths,lg);
+$screen-xl-min: map-get($container-max-widths,xl);
+
+$container-xl: map-get($container-max-widths,xl);
+$container-lg: map-get($container-max-widths,lg);
+$container-sm: map-get($container-max-widths,sm);
+$container-md: map-get($container-max-widths,md);
+
+$container-inside-xl: map-get($container-max-widths,xl)-$grid-gutter-width;
+$container-inside-lg: map-get($container-max-widths,lg)-$grid-gutter-width;
+$container-inside-sm: map-get($container-max-widths,sm)-$grid-gutter-width;
+$container-inside-md: map-get($container-max-widths,md)-$grid-gutter-width;
+
+$brand-primary: map-get($theme-colors,primary);
+

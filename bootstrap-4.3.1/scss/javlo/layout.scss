@@ -1,0 +1,55 @@
+.page-reference {
+	margin-bottom: 15px;
+ }
+
+ ._area {
+ 	background-repeat: no-repeat;
+ 	background-size: cover;
+ }
+
+.h100 {
+	display: flex;
+	flex-basis: auto;
+	align-items: stretch;
+}
+
+ #banner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	position: relative;
+	overflow: hidden;
+	.multimedia.slide {
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	h1, h2, h3, h4, h5, h6, p {
+		z-index: 1;
+		color: #ffffff;
+	}
+}
+
+#user {
+	img {
+		max-height: 100px;
+	}
+	.global-image {
+		margin: 0;
+	}
+}
+
+body.body-background {
+	#main-nav .navbar, #main-nav .container, .dropdown-menu {
+		background-color: transparent;
+	}
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.col-sm-4 {
+		float: left;
+		width: 33.33%;
+	}
+}
