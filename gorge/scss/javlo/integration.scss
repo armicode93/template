@@ -1,0 +1,25 @@
+.navbar-brand {	
+	img {
+		max-width: 140px;
+		max-height: 80px;
+		height: auto;
+		width: auto;
+	}
+}
+
+#sidebar, #content {
+	img {
+		border-radius: 6px;
+	}
+}
+
+.global-title {
+	font-weight: bold;
+}
+
+hr.separation {
+	display: block;
+	height: 1px;
+	margin: 15px auto 30px auto;
+	width: 50%;
+}

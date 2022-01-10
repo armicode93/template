@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="scss/bootstrap.css" />
+    <link rel="stylesheet" href="cubeportfolio/css/cubeportfolio.min.css" />
+    <link rel="stylesheet" href="css/colors/red.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Google Web fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800" rel="stylesheet">
+
+    <!-- Font icons -->
+    <link rel="stylesheet" href="icon-fonts/fontawesome-5.0.6/css/fontawesome-all.min.css" />
+
+</head>
+
+<body>
+    <!-- PRELOADER -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader-inner"></div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <jsp:include page="jsp/logo.jsp" />
+        <div class="nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- FULL MENU -->
+    <jsp:include page="jsp/menu.jsp" />
+
+    <!-- SITE CONTENT -->
+    <div class="wrapper">
+        <section class="titlebar">
+            <c:set var="splitTitle" value="${fn:split(info.title, ' ')}" />
+            <h1 class="page-title">
+                <c:if test="${fn:length(splitTitle)>1}"><span>${splitTitle[0]} </span>
+                    <c:forEach var="word" varStatus="status" items="${splitTitle}">
+                        <c:if test="${status.index>0}">${splitTitle[status.index]} </c:if>
+                    </c:forEach>
+                </c:if>
+                <c:if test="${!(fn:length(splitTitle)>1)}">${info.pageTitle} </c:if>
+            </h1>
+            <div id="particles-js"></div>
+        </section>
+
+        <hr class="separation">
+
+        <div class="cont">
+            <div class="row">
+                <div class="col">
+                    <section id="content">[content]</section>
+                </div>
+                <div class="col-md-4" id="sidebar">[sidebar]</div>
+            </div>
+        </div> <!-- cont end -->
+    </div> <!-- wrapper end -->
+
+    <footer>
+        <div class="cont">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12 copyright">
+                    <div class="global-title">${info.globalTitle}</div>
+                    <p>&copy; 2021 ${globalContext.ownerName}</p>
+                </div>
+                <div class="col-md-4 d-sm-none d-md-block">
+                    <div class="social">
+                        <a href="#"><i class="fab fa-facebook"></i> </a>
+                        <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i> </a>
+                        <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i> </a>
+                        <a href="#"><i class="fab fa-behance" aria-hidden="true"></i> </a>
+                        <a href="#"><i class="fab fa-dribbble" aria-hidden="true"></i> </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 d-none d-sm-block getintouch">
+                    <a href="#">
+                        <strong>Get In Touch</strong><br>
+                        <p>hi@gergedigital.co</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Javascripts -->
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+    <script src="js/typed.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/jquery.hover3d.js"></script>
+    <script src="twitter-api/tweetie.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
