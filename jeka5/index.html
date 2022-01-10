@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="referrer" content="unsafe-url">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<title>${info.pageTitle}<c:if test="${info.pageTitle != info.globalTitle}"> - ${info.globalTitle}</c:if></title>
+<link href="scss/bootstrap.css" rel="stylesheet" />
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+<!--[if IE]>
+<link href="scss/javlo/ie.css" rel="stylesheet" />
+<![endif]-->
+<c:if test="${info.page.seoWeight == 0}">
+	<meta name="robots" content="noindex, nofollow" />
+</c:if>
+<c:if test="${info.page.seoWeight != 0}">
+	<meta name="robots" content="index, follow, noodp, noydir, notranslate, noarchive" />
+</c:if>
+<link rel="canonical" href="${info.currentCanonicalURL}" />
+<jsp:include page="social_meta.jsp" />
+<jsp:include page="meta.html" /><jsp:include page="meta.jsp" />
+<style type="text/css">
+@page { @top-center { content:'${info.globalTitle}';
+	
+}
+
+@bottom-center {
+	content: counter(page) "/" counter(pages);
+}
+}
+
+<c:if test="${info.template.colorPalette}">	
+<c:forEach var="col" items="${info.template.colorsMap}" varStatus="status">
+	.bg-template-${status.index+1} {
+		background-color: ${info.template.colorsMap[status.index]};
+	}    	
+  	</c:forEach>
+<c:set var="color" value="${info.template.colorsMap[status.index]}" />
+<c:set var="style" value='style="background-color: ${color.alphaHTMLCode}; color: ${color.text};"' />					
+</c:if>
+
+</style>
+<jsp:include page="lib/include_lib.jsp" /> 
+
+</head>
+  <body>
+
+    <section class="header">
+        <div class="header-top-line">
+          <div class="container">
+              <nav class="d-flex justify-content-end">
+              	  <div id="quicklinks">
+                  <ul>
+                      <li><a href="#">Notre histoire</a></li>
+                      <li><a href="#">Notre équipe</a></li>
+                  </ul>
+                  </div>
+
+				          <c:if test="${fn:length(info.languages)>1}">
+				          <ul class="lang"><c:forEach var="lg" items="${info.languages}">
+                      <li><a href="${info.languageURLs[lg]}" title="${info.languageMap[lg]}" lang="${lg}">${lg}</a></li>
+                  </c:forEach></ul>
+				          </c:if>
+              </nav>                    
+            </div>
+          </div>
+    </section>
+
+    <section class="menu">
+        <div class="container">
+          <jsp:include page="jsp/menu.jsp" />
+        </div>
+    </section>
+
+    <div class="sep"></div>
+
+    <section id="banner">[banner]</section>
+    
+    <c:if test="${info.page.depth>2}">
+    <nav class="back-nav d-flex justify-content-center mt-3 mb-3">
+      	<a class="btn btn-light" href="${info.page.parent.url}"><i class="fas fa-angle-double-left"></i> ${vi18n['back']} : ${info.page.parent.pageTitle}</a>
+    </nav>
+    </c:if>
+
+    <section id="prefix-wrapper">
+    	<div class="secondary-line"><div id="content-prefix" class="container"></div></div>
+    </section>
+    
+    <section id="content" class="container">[content]</section>    
+
+    <section id="suffix-wrapper">
+    	<div class="secondary-line"><div id="content-suffix" class="container"></div></div>
+    </section>
+    
+    <section id="subarea-1-wrapper">
+    	<div id="content-subarea-1" class="container"></div>
+    </section>
+    
+    <section id="subarea-2-wrapper">
+    	<div class="secondary-line"><div id="content-subarea-2" class="container"></div></div>
+    </section>
+
+    <section class="footer">
+        <div id="footer" class="container">[footer]</div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
+    <script src="main_lib/_all_rec.js"></script>
+
+    <script src="js/javlo.js?bld=##BUILD_ID##"></script>
+
+    <jsp:include page="main_lib/photoswipe/html.jsp" />
+
+   <script type="text/javascript">
+		document.addEventListener("DOMContentLoaded", function(event) {
+			jQuery('#backtotop').hide();		
+			$(window).on('load', function(){
+				initPhotoSwipeFromDOM('.clickable-multimedia a');
+			});
+			$(window).scroll(function() {
+				if (jQuery(this).scrollTop() > 25) {
+					$('#backtotop').show(300);
+				} else {
+					$('#backtotop').hide(300);
+				}
+			});
+		});
+	</script>
+  
+
+  
+  </body>
+</html>
