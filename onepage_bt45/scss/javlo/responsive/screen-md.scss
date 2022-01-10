@@ -1,0 +1,47 @@
+@include media-breakpoint-down(md) {
+	section.full {
+    	height: auto;    	
+	}
+	h1 {
+		font-size: 2.8em;
+	}
+	section.home {
+		padding-bottom: 0;
+		.image-right.text-card, .image-left.text-card {
+    		position: relative;    	
+    		height: auto;    
+    	}	
+	}		
+	section.home .tips-group .tips {
+		.row {
+			height: 100px;
+		}
+		h4 {
+    		font-size: 1em;
+    	}
+	}
+	.image-right.text-card, .image-left.text-card, .multimedia .text-left,.multimedia .text-right {
+		.card {
+			.card-body {
+				p {
+					font-size: 0.9em;
+				}
+			}
+		}
+	}	
+	#content .board-group.children-link {	
+		font-size: 0.8em;
+		height: $container-inside-md + 15*2;	
+		.board {		
+			width: $container-inside-md / 3 - 10;
+			height: $container-inside-md / 3 - 10;
+		 	.subboard-out {	
+				.subboard {				
+					top: $container-inside-md / 3 + (15-10);						
+					width: $container-inside-md;
+					height: ($container-inside-md / 3 - 10)*2+15;					
+				}	
+			}
+		}	
+	}
+}

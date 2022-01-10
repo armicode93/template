@@ -1,0 +1,14 @@
+#mainNav .container {
+	max-width: 925px;	
+}
+
+.navbar-shrink {
+	background-color: rgba(255,255,255,0.8);
+	-webkit-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+}
+
+.edit-preview #float-menu {
+	left: 320px;
+}

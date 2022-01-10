@@ -1,0 +1,52 @@
+@import "../variables";
+
+@include media-breakpoint-down(lg) {
+	section.home h1 {
+		font-size: 6em;
+	}
+	h1 {
+		font-size: 3.4em;
+	}
+	section.home .tips-group {		
+		.row {			
+			.row {				
+				height: 157px;
+			}
+		}		
+	}
+	.tips-group {
+		height: auto;
+		.row {
+			height: auto;			
+		}
+		h4 {
+    		font-size: 1.6em;
+    	}
+	}
+	.image-right.text-card, .image-left.text-card, .multimedia .text-left,.multimedia .text-right  {
+		.card {
+			.card-body {
+				p {
+					font-size: 1.1em;
+				}
+			}
+		}
+	}	
+	
+	#content .board-group.children-link {	
+		font-size: 0.9em;
+		height: $container-inside-lg + 15*2;	
+		.board {		
+			width: $container-inside-lg / 3 - 10;
+			height: $container-inside-lg / 3 - 10;
+		 	.subboard-out {	
+				.subboard {				
+					top: $container-inside-lg / 3 + (15-10);						
+					width: $container-inside-lg;
+					height: ($container-inside-lg / 3 - 10)*2+15;					
+				}	
+			}
+		}	
+	}
+	
+}

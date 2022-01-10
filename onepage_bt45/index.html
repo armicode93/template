@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="${info.language}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title></title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="scss/all.css" rel="stylesheet" />
+
+	<meta property="og:site_name" content="${info.globalTitle}" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="${fn:escapeXml(info.pageTitle)}" />
+	<meta property="og:url" content="${info.currentAbsoluteURL}" />
+	<c:if test="${empty info.page.info.description}">
+		<meta property="og:description" content="${i18n.view['default.description']}" />
+	</c:if>
+	<c:if test="${not empty info.page.info.description}">
+		<meta property="og:description" content="${fn:escapeXml(info.pageDescription)}" />
+	</c:if>
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="${fn:escapeXml(info.pageTitle)}" />
+	<meta name="twitter:site" content="${info.globalTitle}" />
+	<meta name="twitter:creator" content="${info.globalTitle}" />
+	<c:if test="${empty info.page.info.description}">
+		<meta name="twitter:description" content="${i18n.view['default.description']}" />
+	</c:if>
+	<c:if test="${not empty info.page.info.description}">
+		<meta name="twitter:description" content="${fn:escapeXml(info.pageDescription)}" />
+	</c:if>
+	
+	<c:if test="${not empty info.facebookImageUrl}">
+		<meta itemprop="image" content="${info.facebookImageUrl}" />
+		<meta property="og:image" content="${info.facebookImageUrl}" />
+		<meta name="twitter:image" content="${info.facebookImageUrl}" />
+	</c:if>
+  </head>
+
+  <body class="${contentContext.edition || empty info.areaEmpty['quicklinks']?'quicklinks':'noquicklinks'} ${info.mainPage.childrenAssociation?'children-association':'normal-page'} ${not empty info.imageBackground?'as-background-image':'no-background-image'}">
+  	<c:if test="${not empty info.imageBackground}"><div class="background-image" ><div class="outer"><div class="inner"><img src="${info.imageBackground.previewURL}" alt="" /></div></div></div></c:if>
+    <c:if test="${(pageNumber == 1  && info.mainPage.childrenAssociation) || (!param.menu && !info.mainPage.childrenAssociation)}">
+    <!-- Navigation -->        
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    	<div class="container-fluid">
+        <jsp:include page="logo.jsp?cssClass=navbar-brand" />
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" title="${i18n.view['global.menu']}">
+          <i class="fa fa-bars"></i></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+          <c:forEach var="child" items="${info.mainPage.children}"><c:if test="${child.visible}">
+          	<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#section_${child.htmlId}">${child.info.label}</a></li></c:if></c:forEach>
+          </ul>
+        </div>
+      </div>
+    </nav>    
+    </c:if>
+    <c:if test="${!info.page.childrenAssociation && param.menu}">
+    	<jsp:include page="jsp/menu.jsp" />
+    </c:if>
+    <c:if test="${not empty pageNumber}">
+    	<div id="banner">[banner]</div>
+    	<div class="container"><div id="content">[content]</div></div>
+    	<c:if test="${not empty info.page.nextPage}"><div class="next-page"><a class="js-scroll-trigger" href="#section_${info.page.nextPage.htmlId}"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a></div></c:if>
+    </c:if>
+    <c:if test="${empty pageNumber}">
+    	<c:if test="${info.page.childrenAssociation}"><div id="content">[content]</div></c:if>
+    	<c:if test="${!info.page.childrenAssociation}"><section id="section_${page.htmlId}" class="page-section"><div id="banner">[banner]</div><div class="container _area" id="content">[content]</div></section></c:if>
+    </c:if>
+    
+    <c:if test="${(editPreview || empty info.areaEmpty['footer']) && lastAssociation}">
+    	<section class="footer-section">
+    		<div class="container" id="footer"></div>
+    	</section>
+    </c:if>
+    
+    <c:if test="${lastAssociation || !info.page.childrenAssociation}">
+    
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+	<script src="vendor/jquery.easing/jquery.easing.min.js"></script>
+	<script src="js/onepage.js"></script>
+
+	<link href="scss/bootstrap_footer.css" rel="stylesheet" />
+	<script src="js/javlo.js?bld=##BUILD_ID##"></script>	
+	<script src="main_lib/_all_rec.js"></script>
+	
+    </c:if>
+</body>
+</html>
