@@ -1,0 +1,45 @@
+html {
+  scroll-behavior: smooth;
+}
+
+html body {
+	font-family: "CourierNew", Courier;
+	font-size: 97%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "CourierNew", Courier;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+
+.scrolled .navbar-mobile {
+	background-color: transparent;
+  .btn-group {
+	background-color: #ffffff;
+	box-shadow: ;
+  }
+}
+
+.owl-theme .owl-dots .owl-dot span {
+  box-shadow: 0 0 0 #ffffff;
+ 
+}
+
+.wysiwyg-paragraph {
+  margin: 0 0 2rem 0;
+}
+
+#backhome {
+    margin-bottom: 1em;
+    a {
+      display: block;
+      margin-right: 0;
+      text-align: right;
+  	}
+}
+
+#content {
+	margin-bottom: 2em;
+}
