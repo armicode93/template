@@ -18,6 +18,9 @@ function staticSearch() {
 		var data = [];
 		var _searchDataReady = false;
 		buttonItem.onfocus = function () {
+			if (_searchDataReady) {
+				return;
+			}
 			var opts = {
 				method: 'GET',
 				headers: {}
@@ -37,7 +40,7 @@ function staticSearch() {
 			if (_searchDataReady) {
 				resultItem.innerHTML = '';
 				if (this.value.length > 1) {
-					result = search(this.value, data, 9);
+					result = search(this.value, data, 5);
 					if (result.length == 0) {
 						resultItem.classList.remove("result");
 						resultItem.classList.add("no-result");

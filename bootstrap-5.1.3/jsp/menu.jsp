@@ -14,9 +14,24 @@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%><c:if test="${e
 <nav class="navbar navbar-expand-md ${param._menufix?'fixed-top':''} ${param._menudark?'bg-dark navbar-dark':'bg-light navbar-light'}">
 	<div class="container-fluid">
 		<jsp:include page="logo.jsp" />
-		<button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
+		<button id="navbarCollapseCommand" class="hamburger hamburger--elastic collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" lang="en">
+			<span class="hamburger-box"> <span class="hamburger-inner"></span>
+			</span>
 		</button>
+
+		<script>
+			document.addEventListener('DOMContentLoaded',
+				function() {
+					document.getElementById('navbarCollapseCommand').onclick = function() {
+						if (this.classList.contains("is-active")) {
+							this.classList.remove("is-active")
+						} else {
+							this.classList.add("is-active")
+						}
+					}
+				});
+		</script>
+
 		<div class="navbar-collapse collapse d-sm-flex justify-content-between" id="navbarCollapse" style="">
 			<ul class="navbar-nav mb-2 mb-md-0 flex-fill justify-content-${not empty param.menuposition?param.menuposition:'start'}">
 				<c:forEach var="child" items="${menuCurrentPage.children}" varStatus="status">
@@ -45,8 +60,7 @@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%><c:if test="${e
 				<c:if test="${param._menulogin}">
 					<div class="login-bloc collapse-bloc me-3">
 						<a class="btn-login btn btn-sm btn-user d-none-logged btn-outline-secondary" data-bs-toggle="modal" href="#loginForm" aria-expanded="false" aria-controls="loginForm" title="${i18n.view['login.nologin']}"> <i class="bi bi-person-fill"></i>
-						</a>
-						<a class="btn-login btn btn-sm btn-user d-logged" data-bs-toggle="modal" href="#loginForm" aria-expanded="false" aria-controls="loginForm"> <i class="bi bi-person-fill"></i>
+						</a> <a class="btn-login btn btn-sm btn-user d-logged" data-bs-toggle="modal" href="#loginForm" aria-expanded="false" aria-controls="loginForm"> <i class="bi bi-person-fill"></i>
 						</a>
 						<div id="loginForm" class="modal" tabindex="-1"><jsp:include page="menu_login.jsp?noAjaxMenuLogin=true" /></div>
 					</div>
@@ -56,7 +70,7 @@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%><c:if test="${e
 					<div class="search-bloc collapse-bloc">
 						<a class="btn-search btn btn-outline-secondary btn-sm me-3" data-bs-toggle="modal" href="#searchForm" aria-expanded="false" aria-controls="searchForm" title="${i18n.view['global.open-search']}"><i class="bi bi-search"></i></a>
 						<div id="searchForm" class="modal" tabindex="-1">
-							<div class="modal-dialog modal-sm">
+							<div class="modal-dialog modal-md">
 								<div class="modal-content">
 									<div class="modal-header">
 										<h5 class="modal-title">${i18n.view['global.search']}</h5>
@@ -66,31 +80,22 @@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%><c:if test="${e
 										<form id="search-form">
 											<input name="webaction" value="search.search" type="hidden" />
 											<div class="input-group">
-												<input id="staticSearchButton" class="form-control" type="text" onkeyup="_menuUpdateSearch()" placeholder="${i18n.view['global.query']}" aria-label="${i18n.view['global.search']}" accesskey="4" name="keywords">
+												<input id="staticSearchButton" class="form-control" type="text" placeholder="${i18n.view['global.query']}" aria-label="${i18n.view['global.search']}" accesskey="4" name="keywords">
 												<div class="input-group-append">
 													<button class="btn-search btn btn-primary" type="submit">
 														<i class="bi bi-chevron-double-right"></i><span class="visually-hidden">${i18n.view['global.send']}</span>
 													</button>
 												</div>
-												<div id="staticSearchResult"></div>
-												<a href="${info.staticRootURL}/sitemap.json" style="display: none;" id="staticSearchData">staticSeach data</a>
 											</div>
 										</form>
+										<div id="staticSearchResult"></div>
+										<a href="${info.staticRootURL}/sitemap.json" style="display: none;" id="staticSearchData">staticSeach data</a>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<script>
-					function _menuUpdateSearch() {
-						searchURL = addParam(searchURL, "webaction=search.searchdefaultresulthtml");
-						searchURL = addParam(searchURL, "q="+document.getElementById('staticSearchButton').value());
-						searchURL = addParam(searchURL, "id="+staticSearchResult);						
-						searchURL = addParam(searchURL, "max=50");
-						searchURL = addParam(searchURL, "sort=relevance");
-						ajaxRequest(searchURL);
-					}
-					</script>
+
 				</c:if>
 
 				<c:if test="${fn:length(info.languages)>1}">

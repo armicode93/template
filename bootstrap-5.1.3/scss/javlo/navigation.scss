@@ -12,6 +12,12 @@
   }
 }
 
+.navbar-toggler.hamburger {
+  border: 0 none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
 .nav-actions {
   select {
     font-size: 13px;
@@ -22,6 +28,12 @@
   position: relative;
 }
 
+.navbar-collapse.collapsing {
+  -webkit-transition: none;
+  transition: none;
+  display: none;
+}
+
 .not-real-content.no-children a {
   pointer-events: none;
   text-decoration: none;
@@ -29,7 +41,20 @@
 }
 
 .navbar {
-//  z-index: 10;
+  //  z-index: 10;
+
+  .hamburger-inner,
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    background-color: var(--bs-body-color);
+  }
+
+  .hamburger.is-active .hamburger-inner,
+  .hamburger.is-active .hamburger-inner::before,
+  .hamburger.is-active .hamburger-inner::after {
+    background-color: var(--bs-body-color);
+  }
+
 
   .form-select {
     padding-top: 0.3rem;
@@ -188,6 +213,19 @@
   .navbar img {
     max-height: 50px;
   }
+
+  .navbar-collapse.collapse {
+    transition: height 0.2s;
+  }
+
+  .navbar-collapse.collapsing {
+    height: 0 !important;
+  }
+
+  .navbar-collapse.collapse.show {
+    max-height: none;
+    height: 100vh;
+  }
 }
 
 .btn-lang {
@@ -312,7 +350,7 @@ body.user-not-logged-in .btn-user {
 .breadcrumb-arrow-wrapper {
 
   $base: 23px;
-  $bgcolor: #efefef;
+  $bgcolor: transparent;
 
   background-color: $bgcolor;
   border-bottom: 1px #eee solid;
@@ -351,6 +389,7 @@ body.user-not-logged-in .btn-user {
     padding-left: $base+2px;
     padding-right: 2px;
     color: #666;
+    border-bottom: 1px #fff solid;
   }
 
   .breadcrumb-arrow .item:first-child a,
@@ -400,13 +439,11 @@ body.user-not-logged-in .btn-user {
 
   .breadcrumb-arrow a.active,
   .breadcrumb-arrow a:hover {
-    background: darken(grey, 20%);
-    color: white;
+    border-bottom: 1px #eee solid;
   }
 
   .breadcrumb-arrow a.active:after,
   .breadcrumb-arrow a:hover:after {
-    background: darken(grey, 20%);
     color: white;
   }
 
