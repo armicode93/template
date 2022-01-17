@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!-- Javlo Template bootstrap-5.1.3 -->
+<html lang="${info.language}" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="referrer" content="unsafe-url">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>${info.pageTitle}<c:if test="${info.pageTitle != info.globalTitle}"> - ${info.globalTitle}</c:if>
+  </title>
+  <link href="scss/bootstrap.css" rel="stylesheet" />
+  <link href="assets/css/style.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <!--[if IE]>
+<link href="scss/javlo/ie.css" rel="stylesheet" />
+<![endif]-->
+  <c:if test="${info.page.seoWeight == 0}">
+    <meta name="robots" content="noindex, nofollow" />
+  </c:if>
+  <c:if test="${info.page.seoWeight != 0}">
+    <meta name="robots" content="index, follow, noodp, noydir, notranslate, noarchive" />
+  </c:if>
+  <link rel="canonical" href="${info.currentCanonicalURL}" />
+  <jsp:include page="social_meta.jsp" />
+  <jsp:include page="meta.html" />
+  <jsp:include page="meta.jsp" />
+  <style type="text/css">
+    @page {
+      @top-center {
+        content:'${info.globalTitle}';
+
+      }
+
+      @bottom-center {
+        content: counter(page) "/"counter(pages);
+      }
+    }
+
+    <c:if test="${info.template.colorPalette}"><c:forEach var="col" items="${info.template.colorsMap}" varStatus="status">.bg-template-$ {
+      status.index+1
+    }
+
+      {
+      background-color: $ {
+        info.template.colorsMap[status.index]
+      }
+
+      ;
+    }
+
+    </c:forEach><c:set var="color" value="${info.template.colorsMap[status.index]}"/><c:set var="style" value='style="background-color: ${color.alphaHTMLCode}; color: ${color.text};"'/></c:if>
+  </style>
+  <jsp:include page="lib/include_lib.jsp" />
+
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <c:if test="${not empty globalContext.ownerEmail}">
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:${globalContext.ownerEmail}">${globalContext.ownerEmail}</a></i>
+        </c:if>
+        <c:if test="${not empty globalContext.ownerPhone}">
+          <i class="bi bi-phone d-flex align-items-center ms-4"><a href="tel:${globalContext.ownerPhone}">${globalContext.ownerPhone}</a></i>
+        </c:if>
+      </div>
+      <div class="social-links d-none d-md-flex align-items-center">
+        <c:if test="${not empty globalContext.ownerTwitter}"><a href="${globalContext.ownerTwitter}" class="twitter"><i class="bi bi-twitter"></i></a></c:if>
+        <c:if test="${not empty globalContext.ownerFacebook}"><a href="${globalContext.ownerFacebook}" class="facebook"><i class="bi bi-facebook"></i></a></c:if>
+        <c:if test="${not empty globalContext.ownerInstagram}"><a href="${globalContext.ownerInstagram}" class="instagram"><i class="bi bi-instagram"></i></a></c:if>
+        <c:if test="${not empty globalContext.ownerLinkedin}"><a href="${globalContext.ownerLinkedin}" class="linkedin"><i class="bi bi-linkedin"></i></a></c:if>
+      </div>
+    </div>
+  </section>
+
+  <jsp:include page="jsp/menu.jsp"></jsp:include>
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <div id="header">
+
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active" style="background: url(assets/img/slide/slide-1.jpg)">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Eterna</span></h2>
+                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item" style="background: url(assets/img/slide/slide-2.jpg)">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated fanimate__adeInDown">Lorem <span>Ipsum Dolor</span></h2>
+                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item" style="background: url(assets/img/slide/slide-3.jpg)">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">Sequi ea <span>Dime Lara</span></h2>
+                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div id="content">[content]</div>
+          </div>
+          <div class="col-md-3" id="sidebar">[sidebar]</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======= Footer ======= -->
+  <footer>
+    <div class="container" id="footer">[footer]</div>
+  </footer>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/javlo.js?bld=##BUILD_ID##"></script>
+  <jsp:include page="main_lib/photoswipe/html.jsp" />
+  <script src="main_lib/_all_rec.js"></script>
+  <jsp:include page="end_body.jsp" />
+
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function (event) {
+      initPhotoSwipeFromDOM('.clickable-multimedia a');
+    });
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+
+</body>
+
+</html>
