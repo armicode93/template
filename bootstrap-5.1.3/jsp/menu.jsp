@@ -14,7 +14,7 @@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%><c:if test="${e
 <nav class="navbar navbar-expand-md ${param._menufix?'fixed-top':''} ${param._menudark?'bg-dark navbar-dark':'bg-light navbar-light'}">
 	<div class="container-fluid">
 		<jsp:include page="logo.jsp" />
-		<button id="navbarCollapseCommand" class="hamburger hamburger--elastic collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" lang="en">
+		<button id="navbarCollapseCommand" class="navbar-toggler hamburger hamburger--elastic collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" lang="en">
 			<span class="hamburger-box"> <span class="hamburger-inner"></span>
 			</span>
 		</button>

@@ -1,5 +1,4 @@
 onThumbnailsClick = function(e) {
-	loadPhotoswipeCSS();
 	e = e || window.event;
 	e.preventDefault ? e.preventDefault() : e.returnValue = false;
 	eTarget = e.target || e.srcElement;
@@ -75,7 +74,8 @@ var removeParam = function( url ) {
 }
 
 
-var initPhotoSwipeFromDOM = function(selector) {	
+var initPhotoSwipeFromDOM = function(selector) {
+	loadPhotoswipeCSS();
 	var pswpElement = document.querySelectorAll('.pswp')[0];
 	var galleryElements = document.querySelectorAll( selector );
 	var items = [];
