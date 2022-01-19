@@ -1,5 +1,5 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
-<!-- BOOTSTRAP 4 - PDF - 2017 -->
+<!-- BOOTSTRAP 5 - PDF - 2022 -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title></title>
@@ -10,6 +10,10 @@ body {
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
     font-family: ${pdfLayout.fontFamily};
+}
+
+.hide-pdf {
+    display: none !important;
 }
 
 @page {
@@ -50,7 +54,7 @@ body {
 <body class="pdf ${pageClass} responsive-${info.template.style.responsive}" style="-webkit-font-smoothing: antialiased; width: 100% !important; -webkit-text-size-adjust: none;${outerBackgroundColor};" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
 <center>
 <div style="width: ${pdfLayout.width}; min-height: ${pdfLayout.height};">
-    <div style="margin-top: ${pdfLayout.marginTop}; margin-bottom: ${pdfLayout.marginBottom}; margin-left: ${pdfLayout.marginLeft}; margin-right: ${pdfLayout.marginRight};">
+    <div style="padding-top: ${pdfLayout.marginTop}; padding-bottom: ${pdfLayout.marginBottom}; padding-left: ${pdfLayout.marginLeft}; padding-right: ${pdfLayout.marginRight};">
         <div style="color: #000000; padding: 0; margin: 0;" id="header">[header]</div>
         <div style="padding: 15px;" id="content" align="left">[content]</div>
         <div id="footer" style="text-align: center; margin: 0; background-color: #ffffff; padding: 0; vertical-align: top;" align="center">[footer]</div>
