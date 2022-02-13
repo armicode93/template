@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="img">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jeka5/img/jeka_logo_bordered.zip!/" />
+      <root url="jar://$PROJECT_DIR$/jeka5/img/jeka_logo_en.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

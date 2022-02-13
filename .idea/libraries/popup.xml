@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="popup">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/legraindeschoses/popup.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

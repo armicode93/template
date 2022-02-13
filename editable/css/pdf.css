@@ -1,0 +1,34 @@
+._page_associate {
+	page-break-after:always;
+}
+
+._page_associate.last {
+	page-break-after:auto;
+} 
+
+.float-image .image-wrapper, .float-image-width .image-wrapper {
+	margin-bottom: 5px;	
+}
+
+.float-image.right .image-wrapper, .float-image-width.right .image-wrapper {
+	margin-left: 10px;	
+}
+
+.float-image.left .image-wrapper, .float-image-width.left .image-wrapper {
+	margin-right: 10px;	
+}
+
+#footer {
+	postition: absolute;
+	bottom: 0;
+}
+
+figure a, .float-image a {
+	display: inline-block;
+}
+
+img {
+    page-break-before: auto;
+    page-break-after: auto;
+    page-break-inside: avoid;
+}

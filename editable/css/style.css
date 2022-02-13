@@ -1,0 +1,184 @@
+.colored-wrapper div {	
+	border-width: 10px;	
+	border-style: solid;    
+}
+	
+.colored-wrapper {	
+	margin: 15px 0;	
+	text-decoration: none;
+	line-height: 40px;
+}
+
+body {
+	-webkit-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+}
+
+ul, ol, .table-ul, .table-ol {
+	margin-left: 12px;
+	padding: 0;
+}
+
+li, .table-li {
+	padding-right: 12px;
+}
+
+td {
+	vertical-align: top;
+	padding: 0;
+}
+
+.first-in-cell {
+	margin-top: 0;
+	padding-top: 0;	
+}
+
+.date {
+	text-align: right;
+	font-style: italic;
+}
+
+img, figure {
+	margin: 0;
+	padding: 0;
+	display: block;
+	border: 0 none;
+}
+
+.first-component {
+	margin-top: 0;
+}
+
+.first-component h1, .first-component h2, .first-component h3, .first-component h4, .first-component h5, .first-component h6 {
+	margin-top: 0;
+}
+
+.last-component {
+	margin-bottom: 0;
+}
+
+.last-component h1, .last-component h2, .last-component h3, .last-component h4, .last-component h5, .last-component h6 {
+	margin-bottom: 0;
+}
+
+.global-image {
+	margin-bottom: 15px;
+}
+
+.global-image.fix-height figure, .global-image.fix-height img {
+	display: inline;
+}
+
+.global-image.full img, .global-image.banner img, .global-image.full-flip img, .global-image.banner-flip img {
+	border: 0 none;
+	display: block;
+	width: 100%;
+}
+
+.simple-internal-link, .external-link {
+	display: block;
+	margin: 15px 0;
+}
+
+.float-image.right {
+	width: 100%;
+}
+
+.float-image img {
+	display: inline-block;
+}
+
+.float-image.right .image-wrapper {
+	text-align: right;
+}
+
+.float-image td {
+	padding: 0;
+}
+
+.full .float-image .image-wrapper, .banner .float-image .image-wrapper {
+	width: 50%;
+	margin: 0 0 5px 0;
+}
+
+.float-image p, .float-image-width p {
+	padding: 0;
+	margin: 0;
+}
+
+.file .info {
+    font-style: italic;
+    padding-left: 3px;
+}
+
+.file .size {
+    display: inline-block;
+    padding-left: 2px;
+}
+
+/* table.float-image, table.float-image  td, table.float-image  th { */
+/* 	border-collapse: separate; */
+/* } */
+
+.end-area {
+	font-size: 0;
+	height: 0;
+	border: 0 none;
+	margin: 0;
+	padding: 0;
+}
+
+._page_associate, .style_wrapper {
+	width: 100%;
+}
+
+.global-image .center img, .global-image .center figure {
+	display: inline;	
+	margin: 0 auto;
+}
+
+table.float-image-width {
+	width: 100%;
+}
+
+.important {
+	font-weight: bold;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.text.small {
+	font-size: 0.8em !important;
+}
+
+.text.big {
+	font-size: 1.6em !important;
+}
+
+.inside-wrapper {
+	width: 100%;
+}
+
+.array-file table {
+	width: 100%;
+}
+
+.array-file th, .array-file td {
+	text-align: left;
+	padding: 6px;
+}
+
+.unsubscribe-link {
+	margin: 15px 0;
+	text-align: center;
+}
+
+.col-content-wrapper p {
+	margin: 0 0 15px 0;
+}
+
+.page-break {
+	page-break-after: always;
+}
